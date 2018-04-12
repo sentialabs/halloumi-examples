@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Stack < Halloumi::CompoundResource
-  extend ActiveSupport::Concern
   # @!group Properties
   property :alarm_email_addresses,
            filter: Halloumi::Filters.string_to_array,
@@ -157,9 +156,7 @@ class Stack < Halloumi::CompoundResource
   end
 
   resource :example_lambda_events,
-           type: Halloumi::AWS::Events::Rule,
-           amount: -> { with_lambda },
-           id: -> (index) { "ExampleLambdaFunctionEvent" } do |r|
+           type: Halloumi::AWS::Events::Rule do |r|
     r.property(:schedule_expression) { "rate(1 day)" }
     r.property(:state) { "ENABLED" }
     r.property(:targets) do
