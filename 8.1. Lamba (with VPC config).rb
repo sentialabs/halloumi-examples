@@ -31,6 +31,10 @@ class Stack < Halloumi::CompoundResource
            default: 300
 
   # @!group Resources
+  resource :skeletons,
+           type: Halloumi::Skeleton do |r|
+  end
+
   resource :example_lambda_subnet_groups,
            type: Halloumi::SubnetGroup do |r|
     r.property(:amount) { 3 }
