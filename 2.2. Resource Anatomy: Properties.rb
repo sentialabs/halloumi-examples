@@ -46,8 +46,10 @@ class Stack < Halloumi::CompoundResource
   # google for: 'AWS::EC2::VPC Cloudformation'.
   resource :vpcs, type: Halloumi::AWS::EC2::VPC do |r|
 
-    # A property is always defined in between brackets. Everything in between
-    # the brackets will be evaluated on the Class type of whatever you insert.
+    # A property is always defined in a block, that could be curly brackets
+    # or do ... end.
+    # Everything in between will be evaluated on the Class type of whatever
+    # you insert.
     # Based on the Class type it will assign the value 'cidr' to the property.
     # Define the propery 'cidr_block' according the AWS Cloudformation
     # documentation.
