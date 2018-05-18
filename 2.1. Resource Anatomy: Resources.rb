@@ -6,11 +6,11 @@ Resource Anatomy: Resources
 The first important thing to know is that Halloumi assumes that when you define a resource, you might want to define multiple instances of the same resource. Therefore all resource naming is required to be done in _plural_, even if you intend to define only a single one!
 
 The resource definition consists of the following elements:
-  
+
   * The `resource` keyword (which is actually a class method, ed.)
   * The name of the resource (in plural)
   * Keyword arguments (type is compulsory)
-  * Code block (optional) for configuering the resource
+  * Code block (optional) for configuring the resource
 
 A resource can have the following keyword arguments:
 
@@ -29,7 +29,7 @@ The optional code block can be used for configuering the resource, the code bloc
 
 
 class Stack < Halloumi::CompoundResource
-  
+
   # The most simple example, we define a single S3 Bucket.
   # We use the plural name `buckets`.
   # We specify the name as a Ruby symbol (best practice).
